@@ -14,7 +14,7 @@ class Article:
     @title.setter
     def title(self, new_title):
         if hasattr(self, "title"):
-            AttributeError("Title cannot be changed")
+            AttributeError("Title cannot be changed after initialization")
         else:
             if isinstance(new_title, str):
                 if 5 <= len(new_title) <= 50:
@@ -58,7 +58,7 @@ class Author:
     @name.setter
     def name(self, new_name):
         if hasattr(self, "name"):
-            AttributeError("Name cannot be changed")
+            AttributeError("Name cannot be changed after author is instantiated")
         else:
             if isinstance(new_name, str):
                 if len(new_name):
