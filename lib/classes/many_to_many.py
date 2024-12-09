@@ -14,10 +14,10 @@ class Article:
     @title.setter
     def title(self, new_title):
         if hasattr(self, "title"):
-            AttributeError("Title cannot be changed after initialization")
+            AttributeError("Title is immutable")
         else:
             if isinstance(new_title, str):
-                if 5 <= len(new_title) <= 50:
+                if len(new_title) >=5 and len(new_title) <=50:
                     self._title = new_title
                 else:
                     ValueError("Title must be between 5 and 50 characters")
@@ -58,7 +58,7 @@ class Author:
     @name.setter
     def name(self, new_name):
         if hasattr(self, "name"):
-            AttributeError("Name cannot be changed after author is instantiated")
+            AttributeError("Name is immutable")
         else:
             if isinstance(new_name, str):
                 if len(new_name):
@@ -98,7 +98,7 @@ class Magazine:
     @name.setter
     def name(self, new_name):
         if isinstance(new_name, str):
-            if 2 <= len(new_name) <= 16:
+            if (len(new_name) >=2 and len(new_name) <=16):
                 self._name = new_name
             else: 
                 ValueError("Name must be between 2 and 16 characters")
